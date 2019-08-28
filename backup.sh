@@ -18,7 +18,7 @@ echo "Output filename will be $OUTPUT_FILE"
 echo "Calling Elasticsearch to flush all indices"
 curl -X POST $ELASTICSEARCH_URL/_flush 2> /dev/null
 
-echo "Tar-balling Elasticsearch data in /data"
+echo "\nTar-balling Elasticsearch data in /data"
 if tar -czvf $OUTPUT_FILE /data
 then
   echo "Created $OUTPUT_FILE"
