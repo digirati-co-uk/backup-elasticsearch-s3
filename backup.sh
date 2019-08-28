@@ -10,8 +10,8 @@ function announce() {
 }
 
 OUTPUT_FOLDER="/tmp"
-FORMATTED_FILENAME=`date $DATE_FORMAT`.sql
-OUTPUT_FILE=$OUTPUT_FOLDER/$BACKUP_NAME-$FORMATTED_FILENAME.tar.gz
+FORMATTED_FILENAME=`date $DATE_FORMAT`.tar.gz
+OUTPUT_FILE=$OUTPUT_FOLDER/$BACKUP_NAME-$FORMATTED_FILENAME
 
 echo "Output filename will be $OUTPUT_FILE"
 
@@ -40,9 +40,9 @@ then
 fi
 
 echo "Transfer output to S3"
-aws s3 cp $OUTPUT_FILE $S3_PREFIX$FORMATTED_FILENAME.tar.gz
+aws s3 cp $OUTPUT_FILE $S3_PREFIX$FORMATTED_FILENAME
 echo "Removing temporary file"
 rm -f $OUTPUT_FILE
 echo "Done"
-announce "$BACKUP_NAME backup: Written to $S3_PREFIX$FORMATTED_FILENAME.tar.gz"
+announce "$BACKUP_NAME backup: Written to $S3_PREFIX$FORMATTED_FILENAME"
 exit 0
