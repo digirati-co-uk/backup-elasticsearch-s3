@@ -16,10 +16,10 @@ OUTPUT_FILE=$OUTPUT_FOLDER/$BACKUP_NAME-$FORMATTED_FILENAME
 echo "Output filename will be $OUTPUT_FILE"
 
 echo "Calling Elasticsearch to flush all indices"
-curl -X POST $ELASTICSEARCH_URL/_flush
+curl -X POST $ELASTICSEARCH_URL/_flush 2> /dev/null
 
 echo "Tar-balling Elasticsearch data in /data"
-if tar -czf $OUTPUT_FILE /data
+if tar -czvf $OUTPUT_FILE /data
 then
   echo "Created $OUTPUT_FILE"
 else
