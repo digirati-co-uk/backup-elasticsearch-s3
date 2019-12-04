@@ -10,6 +10,7 @@ This container is intended to be run as a scheduled job to perform an automated 
 | DATE_FORMAT       | `date` format for backup files                      | +%Y%m%d%H%M |
 | SLACK_WEBHOOK_URL | Slack webhook URL that backups will be announced to |             |
 | BACKUP_NAME       | Identifier for backup (used for tempory file)       |             |
+| ELASTICSEARCH_URL | URL that ElasticSearch can be reached on            |             |
 
 # Requirements and permission
 
