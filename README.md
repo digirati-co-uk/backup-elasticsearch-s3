@@ -18,8 +18,6 @@ The task will need `s3:PutObject` permission on the target S3 bucket and key pre
 
 The host that the task is running on needs to be able to access the database host on the specified port.
 
-Also needs access to local Docker socket, so launch with `/var/run/docker.sock` mapped into the container.
-
 # Usage
 
 ```
